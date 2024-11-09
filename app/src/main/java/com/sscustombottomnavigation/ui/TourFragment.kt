@@ -1,15 +1,21 @@
 package com.sscustombottomnavigation.ui
 
-import android.animation.ObjectAnimator
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.GridLayout
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.sscustombottomnavigation.R
 
 class TourFragment : Fragment(R.layout.fragment_tour) {
+
+    private lateinit var floatingContainer: View
+    private lateinit var floatingImageView: ImageView
+    private lateinit var floatingTextView: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,49 +28,55 @@ class TourFragment : Fragment(R.layout.fragment_tour) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // List of image views for grid items
-        val imageViews = listOf(
-            view.findViewById<ImageView>(R.id.imageView2),
-            view.findViewById<ImageView>(R.id.imageView3),
-            view.findViewById<ImageView>(R.id.imageView4),
-            view.findViewById<ImageView>(R.id.imageView5),
-            view.findViewById<ImageView>(R.id.imageView6),
-            view.findViewById<ImageView>(R.id.imageView7),
-            view.findViewById<ImageView>(R.id.imageView8),
-            view.findViewById<ImageView>(R.id.imageView9),
-            view.findViewById<ImageView>(R.id.imageView10),
-            view.findViewById<ImageView>(R.id.imageView11)
+        // Initialize the floating container and its views
+        floatingContainer = view.findViewById(R.id.floatingContainer)
+        floatingImageView = view.findViewById(R.id.floatingImageView)
+        floatingTextView = view.findViewById(R.id.floatingTextView)
+
+        // Set up the GridLayout containing the image tiles
+        val imageGrid = view.findViewById<GridLayout>(R.id.imageGrid)
+
+        // Image details for the grid
+        val imageDetails = listOf(
+            "Image 1: Daddy's Home", "Image 2: Daddy's Home", "Image 3: Daddy's Home",
+            "Image 4: Daddy's Home", "Image 5: lkdlksjdklasjdlas", "Image 6: Daddy's Home",
+            "Image 7: Daddy's Home", "Image 8: Daddy's Home", "Image 9: Daddy's Home",
+            "Image 10: Daddy's Home", "Image 11: Daddy's Home"
         )
 
-        // Set click listeners to each image view for zoom-in effect
-        for (imageView in imageViews) {
+        // IDs of image views in the grid
+        val imageIds = listOf(
+            R.id.imageView2, R.id.imageView3, R.id.imageView4,
+            R.id.imageView5, R.id.imageView6, R.id.imageView7,
+            R.id.imageView8, R.id.imageView9, R.id.imageView10,
+            R.id.imageView11
+        )
+
+        // Set click listeners for each image tile
+        for ((index, imageId) in imageIds.withIndex()) {
+            val imageView = view.findViewById<ImageView>(imageId)
             imageView.setOnClickListener {
-                zoomImage(imageView)
+                Log.d("TourFragment", "Image clicked: ${imageDetails[index]}") // Debug log
+                showFloatingImage(imageView, imageDetails[index])
             }
+        }
+
+        // Close the floating image view when the container is clicked
+        view.findViewById<ImageView>(R.id.closeFloating).setOnClickListener {
+            hideFloatingImage()
         }
     }
 
-    private fun zoomImage(imageView: ImageView) {
-        // Scale up animation
-        ObjectAnimator.ofFloat(imageView, "scaleX", 1.2f).apply {
-            duration = 200
-            start()
-        }
-        ObjectAnimator.ofFloat(imageView, "scaleY", 1.2f).apply {
-            duration = 200
-            start()
-        }
+    private fun showFloatingImage(imageView: ImageView, description: String) {
+        // Display the selected image in the floating container
+        floatingImageView.setImageDrawable(imageView.drawable)
+        floatingTextView.text = description // Set the image description
+        floatingContainer.visibility = View.VISIBLE
+        Log.d("TourFragment", "Showing floating image with description: $description") // Debug log
+    }
 
-        // Scale down animation with delay
-        imageView.postDelayed({
-            ObjectAnimator.ofFloat(imageView, "scaleX", 1f).apply {
-                duration = 200
-                start()
-            }
-            ObjectAnimator.ofFloat(imageView, "scaleY", 1f).apply {
-                duration = 200
-                start()
-            }
-        }, 200)
+    private fun hideFloatingImage() {
+        // Hide the floating container
+        floatingContainer.visibility = View.GONE
     }
 }
