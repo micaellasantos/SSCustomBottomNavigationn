@@ -41,9 +41,8 @@
         android:layout_height="729dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="173dp"
-        android:layout_marginBottom="12dp"
-        android:background="@drawable/rounded_background"
+        android:layout_marginTop="148dp"
+        android:layout_marginBottom="37dp"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -53,6 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
             android:hint="Your Name"
+            android:background="@drawable/input_background"
             android:inputType="textPersonName" />
 
         <EditText
@@ -61,6 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
             android:hint="Your Email"
+            android:background="@drawable/input_background"
             android:inputType="textEmailAddress" />
 
         <TextView
@@ -75,6 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
+            android:background="@drawable/input_background"
             android:focusable="false"
             android:hint="Date" />
 
@@ -87,6 +89,7 @@
 
         <EditText
             android:id="@+id/timeInput"
+            android:background="@drawable/input_background"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
@@ -95,6 +98,7 @@
 
         <EditText
             android:id="@+id/schoolInput"
+            android:background="@drawable/input_background"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
@@ -103,11 +107,12 @@
 
         <Button
             android:id="@+id/submitButton"
-            android:layout_width="381dp"
-            android:layout_height="79dp"
-            android:layout_marginTop="48dp"
+            android:layout_width="377dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/ripple_background"
             android:backgroundTint="#2196F3"
-            android:padding="30dp"
+            android:padding="10dp"
             android:text="Reserve Tour" />
     </LinearLayout>
 

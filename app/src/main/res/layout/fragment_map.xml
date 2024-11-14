@@ -7,6 +7,7 @@
     tools:context=".ui.CoursesFragment">
 
     <!-- Sticky Header with Logo and Menu Bar -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
@@ -17,17 +18,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <!-- Logo -->
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="399dp"
-            android:layout_height="104dp"
-            android:layout_marginStart="-25dp"
-            android:layout_marginTop="-10dp"
-            android:contentDescription="Logo"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logo2" />
 
         <!-- Menu Bar Icon -->
         <ImageView
@@ -40,25 +30,24 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/baseline_menu_24" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="355dp"
+            android:layout_height="112dp"
+            android:src="@drawable/logo2"
+            tools:layout_editor_absoluteX="-2dp"
+            tools:layout_editor_absoluteY="16dp"
+            tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- MapView below the header -->
-    <org.osmdroid.views.MapView
-        android:id="@+id/mapView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="136dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/header"
-        app:layout_constraintVertical_bias="0.5" >
-
-        <com.google.android.gms.maps.MapView
-            android:id="@+id/mapView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </org.osmdroid.views.MapView>
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="380dp"
+        android:layout_height="774dp"
+        android:src="@drawable/mapp"
+        tools:layout_editor_absoluteX="15dp"
+        tools:layout_editor_absoluteY="50dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
