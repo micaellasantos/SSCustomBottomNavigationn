@@ -90,12 +90,6 @@
                 android:text="At NTC, you experience the Joy in Quality Learning and increase your chances of securing your future. NTC helps students succeed in their chosen careers using a Modern Experiential Learning System—allowing them to explore, experiment, and build new ideas."
                 android:textSize="20sp"
                 android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/add_a_subheading__324_x_60_px___1_" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
