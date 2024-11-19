@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "101686854767",
+    "project_id": "ntceen-f7947",
+    "storage_bucket": "ntceen-f7947.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101686854767:android:917946dc49b778f368f99a",
+        "android_client_info": {
+          "package_name": "com.sscustombottomnavigation"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClKnm2gEyY9T3IwYISC0_qLX4fbaqnMFg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101686854767:android:e8a764e996705e0768f99a",
+        "android_client_info": {
+          "package_name": "com.sscustombottomnavigation.ui"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClKnm2gEyY9T3IwYISC0_qLX4fbaqnMFg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
