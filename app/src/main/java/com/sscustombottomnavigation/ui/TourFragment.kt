@@ -40,7 +40,8 @@ class TourFragment : Fragment() {
 
         submitButton.setOnClickListener {
             // Handle reservation logic here
-            val name = view.findViewById<EditText>(R.id.nameInput).text.toString()
+            val first = view.findViewById<EditText>(R.id.firstnameInput).text.toString()
+            val last = view.findViewById<EditText>(R.id.lastnameInput).text.toString()
             val email = view.findViewById<EditText>(R.id.emailInput).text.toString()
             val date = dateInput.text.toString()
             val time = timeInput.text.toString()
