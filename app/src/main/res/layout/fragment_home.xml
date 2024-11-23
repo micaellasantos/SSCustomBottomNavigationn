@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.CoursesFragment">
 
-    <!-- Sticky Header with Logo and Menu Bar -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
@@ -17,9 +16,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Logo -->
         <ImageView
-            android:id="@+id/logo"
+            android:id="@+id/logoHeader"
             android:layout_width="399dp"
             android:layout_height="104dp"
             android:layout_marginStart="-25dp"
@@ -30,20 +28,19 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/logo2" />
 
-        <!-- Menu Bar Icon -->
         <ImageView
             android:id="@+id/menuBars"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:contentDescription="Menu"
-            app:srcCompat="@drawable/baseline_menu_24"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintVertical_bias="0.321"
+            app:srcCompat="@drawable/baseline_menu_24" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Scrollable Content Below the Sticky Header -->
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="0dp"
@@ -55,34 +52,56 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Use a LinearLayout for the scrollable content -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- "Home" TextView above the Image -->
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Home"
-                android:textStyle="bold"
-                android:textSize="24sp"
-                android:textColor="@android:color/black"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp" /> <!-- Optional margin for spacing -->
-
-            <!-- Image below the "Home" TextView -->
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="413dp"
                 android:layout_height="wrap_content"
                 android:src="@drawable/himage" />
 
-            <!-- Justified TextView -->
             <TextView
                 android:id="@+id/hone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:justificationMode="inter_word"
+                android:padding="16dp"
+                android:text="At NTC, you experience the Joy in Quality Learning and increase your chances of securing your future. NTC helps students succeed in their chosen careers using a Modern Experiential Learning System—allowing them to explore, experiment, and build new ideas."
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/maptext" />
+
+            <ImageView
+                android:id="@+id/drawable1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/gojobaby"
+                android:layout_marginTop="16dp" />
+
+            <ImageView
+                android:id="@+id/drawable2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/gojobaby"
+                android:layout_marginTop="16dp" />
+
+            <ImageView
+                android:id="@+id/drawable3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/gojobaby"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:id="@+id/nshd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:justificationMode="inter_word"
